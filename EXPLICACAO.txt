@@ -1,0 +1,31 @@
+Resumo do problema
+
+Na pratica, as alteracoes feitas para o CTA/botao real do email nao mudaram o comportamento observado pelo usuario.
+Os sintomas continuam os mesmos no uso real:
+
+- o campo "Botao real do email" continua com problema ao digitar espacos
+- o botao continua bugado no editor visual
+- o texto continua desalinhado/fora do botao
+- o resultado visto no email/admin continua com cara de antes das alteracoes
+
+O que pode ter ocorrido
+
+1. Cache de navegador ou cache de asset JS/CSS ainda servindo versoes antigas.
+2. Divergencia entre arquivos locais e arquivos realmente servidos pela VPS.
+3. Mais de um entrypoint/arquivo de admin afetando a mesma tela, com uma copia antiga prevalecendo.
+4. Parte da logica estar no frontend e outra parte no backend, e apenas uma delas ter sido atualizada.
+5. Algum fluxo do editor estar recriando o botao/texto com valores antigos depois da edicao.
+6. Possivel diferenca entre o caminho usado no ambiente local e o caminho real usado em producao.
+
+Arquivos incluidos nesta pasta
+
+- admin_admin_mensagens.php
+- assets_js_admin-message-editor-v2.js
+- assets_js_message-scene-renderer.js
+- templates_message-renderer.html
+- includes_customer_messages.php
+- admin_includes_customer_messages.php
+
+Objetivo desta pasta
+
+Entregar ao Manusia os arquivos alterados em formato plano, sem subpastas, para revisao tecnica e ajuste direto.
